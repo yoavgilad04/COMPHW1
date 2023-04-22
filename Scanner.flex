@@ -13,7 +13,7 @@ digit   		([0-9])
 letter  		([a-zA-Z])
 whitespace		([\r\n\t ])
 printable       ([\x20-\x7E\x09\x0A\x0D])
-escape          ([\*])
+escape          ([\\])
 
 %%
 
@@ -23,6 +23,7 @@ escape          ([\*])
 {whitespace}				;
 .		                    printf("Lex .\n");
 {printable}+                printf("Lex printable")
+{escape}{printable}+        printf("Escape")
 
 %%
 

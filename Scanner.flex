@@ -18,7 +18,7 @@ escape          ([\\])
 
 %%
 
-void                        printf("void");
+void                        printf("Found void \n");
 int
 byte
 bool

@@ -5,8 +5,7 @@ int main()
 {
 	int token;
 	while ((token = yylex())) {
-        if(token == NUM)
-            printf("asdfdsf");
+        printf("asdfdsf");
 	}
 	return 0;
 }

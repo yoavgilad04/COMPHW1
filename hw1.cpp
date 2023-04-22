@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "tokens.hpp"
+
 int main()
 {
 	int token;

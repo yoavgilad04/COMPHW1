@@ -23,7 +23,7 @@ escape          ([\\])
 {whitespace}				;
 .		                    printf("Lex .\n");
 {printable}+                printf("Lex printable")
-
+{escape}+{printable}{1,2}   printf("Escape")
 %%
 
 void showToken(char * name)

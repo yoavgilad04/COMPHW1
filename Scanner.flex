@@ -22,7 +22,7 @@ escape          ([\\])
 {letter}+@{letter}+\.com		showToken("email address");
 {whitespace}				;
 .		                    printf("Lex .\n");
-{printable}+                printf("Lex printable")
+{printable}+                printf("Lex printable");
 
 %%
 

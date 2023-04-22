@@ -17,7 +17,7 @@ escape          ([\\])
 
 %%
 
-{digit}+          			showToken("number");
+{digit}+          			return NUM;
 {letter}+					showToken("word");
 {letter}+@{letter}+\.com		showToken("email address");
 {whitespace}				;

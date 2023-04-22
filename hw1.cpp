@@ -5,7 +5,7 @@ int main()
 	int token;
 
 	while ((token = yylex())) {
-	  // Your code here
+	  if ()
 	}
 	return 0;
 }

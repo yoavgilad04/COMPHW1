@@ -3,10 +3,9 @@
 int main()
 {
 	int token;
-
 	while ((token = yylex())) {
         printf("I am inside the loop");
-	  if (token == NUM)
+        if (token == NUM)
           printf("Im a number");
 	}
 	return 0;

@@ -25,7 +25,7 @@ bool
 {digit}+          			return NUM;
 {letter}+					showToken("word");
 {letter}+@{letter}+\.com		showToken("email address");
-{whitespace}				printf("Found whitespace\n");return;
+{whitespace}				printf("Found whitespace\n"); return 19310;
 .		                    printf("Lex .\n");
 
 %%

@@ -11,22 +11,18 @@ void showToken(char *);
 %option noyywrap
 digit   		([0-9])
 letter  		([a-zA-Z])
-whitespace		([\r\n ])
-printable       ([0x20-0x7E\r\n ])
+whitespace		([\r\n\t ])
+printable       ([\x20-\x7E\x09\x0A\x0D])
+escape          ([\*])
 
 %%
 
-{digit}+          			return NUM;
-{letter}+					return WORD;
-{letter}+@{letter}+\.com	return EMAIL;
-{whitespace}				;
-.		printf("Lex doesn't know what that is!\n");
 {digit}+          			showToken("number");
 {letter}+					showToken("word");
 {letter}+@{letter}+\.com		showToken("email address");
 {whitespace}				;
-.		printf("Lex doesn't know what that is!\n");
-
+.		                    printf("Lex .\n");
+{printable}+                printf("Lex printable")
 
 %%
 

@@ -5,8 +5,8 @@ int main()
 {
 	int token;
 	while ((token = yylex())) {
-        printf("I am inside the loop")
-          printf("Im a number");
+        if(token == NUM)
+            printf("asdfdsf");
 	}
 	return 0;
 }

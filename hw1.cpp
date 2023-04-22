@@ -3,10 +3,11 @@
 
 int main()
 {
-	int token;
+    printf("Im Above");
+    int token;
 	while ((token = yylex())) {
-        printf("Im here");
         exit(0);
-	}
-	return 0;
+    }
+    printf("Im Below");
+    return 0;
 }

@@ -27,7 +27,7 @@ bool
 {letter}+@{letter}+\.com		showToken("email address");
 {whitespace}				;
 .		                    printf("Lex .\n");
-{printable}                 printf("printable .\n");
+{printable}+                 printf("printable .\n");
 
 %%
 

@@ -4,9 +4,10 @@
 int main()
 {
     printf("Im Above");
-    int token;
-	while ((token = yylex())) {
+    int token = yylex();
+	while (token) {
         exit(0);
+        token = yylex();
     }
     printf("Im Below");
     return 0;

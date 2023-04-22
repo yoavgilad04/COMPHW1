@@ -1,12 +1,12 @@
 #include "tokens.hpp"
-#include <iostream>
+#include #include <iostream>
 
 int main()
 {
 	int token;
-    std::cout << "hello world";
-//	while ((token = yylex())) {
-//	  // Your code here
-//	}
-//	return 0;
+
+	while ((token = yylex())) {
+	  // Your code here
+	}
+	return 0;
 }

@@ -2,7 +2,6 @@
 
 /* Declarations section */
 #include <stdio.h>
-#include "tokens.hpp"
 void showToken(char *);
 
 %}
@@ -17,7 +16,7 @@ escape          ([\\])
 
 %%
 
-{digit}+          			return NUM;
+{digit}+          			return "NUM";
 {letter}+					showToken("word");
 {letter}+@{letter}+\.com		showToken("email address");
 {whitespace}				;

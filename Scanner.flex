@@ -12,7 +12,7 @@ void showToken(char *);
 digit   		([0-9])
 letter  		([a-zA-Z])
 whitespace		([\r\n\t ])
-printable       ([\x20-\x7E\x09\x0A\x0D])
+printable       ([\x20-\x7e\x09\x0a\x0d])
 escape          ([\\])
 
 

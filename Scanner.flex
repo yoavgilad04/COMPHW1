@@ -17,12 +17,12 @@ escape          ([\\])
 
 %%
 
+void                        printf("void");
 {digit}+          			return "NUM";
 {letter}+					showToken("word");
 {letter}+@{letter}+\.com		showToken("email address");
 {whitespace}				;
 .		                    printf("Lex .\n");
-{printable}+                printf("Lex printable");
 
 %%
 

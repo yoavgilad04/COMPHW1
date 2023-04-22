@@ -23,7 +23,7 @@ escape          ([\\])
 {whitespace}				;
 .		                    printf("Lex .\n");
 {printable}+                printf("Lex printable")
-{escape}{printable}+        printf("Escape")
+//{escape}{printable}+        printf("Escape")
 
 %%
 

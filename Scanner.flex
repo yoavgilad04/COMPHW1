@@ -23,7 +23,7 @@ int
 byte
 bool
 {digit}+          			return NUM;
-{letter}+					showToken("word");
+{letter}+					showToken("word"); return;
 {letter}+@{letter}+\.com		showToken("email address");
 {whitespace}				printf("Found whitespace\n");
 .		                    printf("Lex .\n");

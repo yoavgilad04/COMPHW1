@@ -5,9 +5,8 @@ int main()
 {
     printf("Im Above");
     int token = yylex();
-	while (token) {
-        exit(0);
-        token = yylex();
+	while ((token = yylex())) {
+        printf("Im Inside");
     }
     printf("Im Below");
     return 0;

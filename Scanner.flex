@@ -15,14 +15,19 @@ whitespace		([\r\n\t ])
 printable       ([\x20-\x7E\x09\x0A\x0D])
 escape          ([\\])
 
+
 %%
 
 void                        printf("void");
+int
+byte
+bool
 {digit}+          			return "NUM";
 {letter}+					showToken("word");
 {letter}+@{letter}+\.com		showToken("email address");
 {whitespace}				;
 .		                    printf("Lex .\n");
+{printable}                 printf("printable .\n");
 
 %%
 

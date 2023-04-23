@@ -3,6 +3,8 @@
 /* Declarations section */
 #include <stdio.h>
 #include "tokens.hpp"
+#include <string.h>
+
 void showToken(char *);
 
 %}
@@ -18,21 +20,24 @@ escape          ([\\])
 
 %%
 
+\"{printable}[^\"]*\"               showToken("STRING");
+{whitespace}				printf("Found whitespace\n");
 void                        return VOID;
-int
-byte
-bool
-{digit}+          			return NUM;
+{digit}+          			showToken("NUM");
 {letter}+					showToken("word");
 {letter}+@{letter}+\.com		showToken("email address");
-{whitespace}				printf("Found whitespace\n"); return 19310;
+
 .		                    printf("Lex .\n");
 
 %%
 
 void showToken(char * name)
 {
-    printf("Lex found a %s, the lexeme is %s and its length is %d\n", name, yytext, yyleng);
+    if (strcmp(name,"STRING") == 0){
+        printf("%d %s %.*s\n", yylineno, name, yyleng-2, yytext+1);
+        return;
+    }
+    printf("%d %s %s\n", yylineno, name, yytext);
 }
 
 

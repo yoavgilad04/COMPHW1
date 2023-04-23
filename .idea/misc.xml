@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
+  <component name="UnattendedHostPersistenceState">
+    <option name="openedFilesInfos">
+      <list>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="117" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/CMakeLists.txt" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="159" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/hw1.cpp" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="730" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/Scanner.flex" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="0" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/tokens.hpp" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="0" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/out.txt" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="31" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/input.txt" />
+        </OpenedFileInfo>
+      </list>
+    </option>
+  </component>
 </project>

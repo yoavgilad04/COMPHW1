@@ -1,0 +1,4 @@
+/home/yoavgilad/.cache/JetBrains/RemoteDev/dist/880329aca0c3c_CLion-2022.1.3/bin/cmake/linux/bin/cmake -G "CodeBlocks - Unix Makefiles" -S /home/yoavgilad/CompHomwWork/COMPHW1 -B /home/yoavgilad/CompHomwWork/COMPHW1/cmake-build-default
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yoavgilad/CompHomwWork/COMPHW1/cmake-build-default

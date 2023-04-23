@@ -3,12 +3,9 @@
 #include <iostream>
 int main()
 {
-    printf("Im Above");
-    int token = yylex();
-    printf("%d", (token = yylex()));
+    int token;
 	while ((token = yylex())) {
-        printf("Im Inside");
+        std::cout << token << std::endl;
     }
-    printf("Im Below");
     return 0;
 }

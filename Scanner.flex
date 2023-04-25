@@ -18,8 +18,13 @@ printable       ([\x20-\x7e\x09\x0a\x0d])
 escape          ([\\])
 
 
-%%
+%x STRING
 
+%%
+\"                          BEGIN(STRING);
+<STRING>\"                  BEGIN(INITIAL);
+<STRING>{printable}[^\"]*    showToken("STRING");
+<STRING>.                   showToken("illegal")
 \"{printable}[^\"]*\"               showToken("STRING");
 {whitespace}				printf("Found whitespace\n");
 void                        return VOID;
@@ -31,13 +36,13 @@ void                        return VOID;
 
 %%
 
+
 void showToken(char * name)
 {
-    if (strcmp(name,"STRING") == 0){
-        printf("%d %s %.*s\n", yylineno, name, yyleng-2, yytext+1);
-        return;
-    }
     printf("%d %s %s\n", yylineno, name, yytext);
 }
+
+
+
 
 

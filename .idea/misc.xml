@@ -9,14 +9,6 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/CMakeLists.txt" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="159" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/hw1.cpp" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="730" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/Scanner.flex" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
           <option name="caretOffset" value="0" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/tokens.hpp" />
         </OpenedFileInfo>
@@ -25,8 +17,16 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/out.txt" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="31" />
+          <option name="caretOffset" value="6" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/input.txt" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="723" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/Scanner.flex" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="159" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/hw1.cpp" />
         </OpenedFileInfo>
       </list>
     </option>

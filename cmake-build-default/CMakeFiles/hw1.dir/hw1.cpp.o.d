@@ -89,4 +89,4 @@ CMakeFiles/hw1.dir/hw1.cpp.o: \
  /usr/include/c++/4.8.2/bits/locale_facets.tcc \
  /usr/include/c++/4.8.2/bits/basic_ios.tcc \
  /usr/include/c++/4.8.2/bits/ostream.tcc /usr/include/c++/4.8.2/istream \
- /usr/include/c++/4.8.2/bits/istream.tcc
+ /usr/include/c++/4.8.2/bits/istream.tcc /usr/include/string.h

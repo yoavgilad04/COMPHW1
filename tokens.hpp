@@ -33,7 +33,13 @@
     ID = 27,
     NUM = 28,
     STRING = 29,
-	OVERRIDE=30
+	OVERRIDE=30,
+    ERROR = 31,
+    INITSTRING = 100,
+    ADDSTRING = 101,
+    STRINGESC = 102,
+    ENDSTRING = 103
+
   };
   extern int yylineno;
   extern char* yytext;

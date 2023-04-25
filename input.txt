@@ -1,1 +1,2 @@
-"lala"
+"hello\0 world"
+"hi my name is\tmelissa"

@@ -38,7 +38,9 @@
     INITSTRING = 100,
     ADDSTRING = 101,
     STRINGESC = 102,
-    ENDSTRING = 103
+    STRINGERROR = 103,
+    ESCERROR = 104,
+    LINESTRINGERROR = 105
 
   };
   extern int yylineno;

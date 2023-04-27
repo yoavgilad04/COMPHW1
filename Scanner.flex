@@ -13,7 +13,8 @@ digit   		([0-9])
 letter  		([a-zA-Z])
 escape          ([\\])
 whitespace		([\r\n\t ])
-instring       ([\x20-\x21\x23-\x5b\x5d-\x7e\x09\x0a\x0d])
+instring       ([\x20-\x21\x23-\x5b\x5d-\x7e])
+incomment      ([^\x0A\x0D])
 
 
 %x STR
@@ -22,11 +23,12 @@ instring       ([\x20-\x21\x23-\x5b\x5d-\x7e\x09\x0a\x0d])
 %%
 \"                          BEGIN(STR); return INITSTRING;
 <STR>\"                     BEGIN(INITIAL); return STRING;
-<STR>{instring}*           return ADDSTRING;
-<STR>{escape}              BEGIN(ESC);
-<STR>.                      return ERROR;
-<ESC>n|t|r|0|\"|\\|x({digit}|{letter}){2}            BEGIN(STR); return STRINGESC;
-<ESC>.                      return ERROR;
+<STR>{instring}*            return ADDSTRING;
+<STR>{escape}               BEGIN(ESC);
+<STR>[\x0a]                 return LINESTRINGERROR;
+<STR>.                      return STRINGERROR;
+<ESC>n|t|r|0|\"|\\|x({digit}|[a-fA-F]){2}            BEGIN(STR); return STRINGESC;
+<ESC>.|x..;                      return ESCERROR;
 {whitespace}				;
 void                        return VOID;
 int                         return INT;
@@ -42,7 +44,23 @@ return                      return RETURN;
 else                        return ELSE;
 while                       return WHILE;
 if                          return IF;
+break                       return BREAK;
+continue                    return CONTINUE;
+;                           return SC;
+,                           return COMMA;
+\(                           return  LPAREN;
+\)                           return  RPAREN;
+\{                           return  LBRACE;
+\}                           return  RBRACE;
+\=                           return ASSIGN;
+==|!=|<|>|<=|>=             return RELOP;
+\+|\-|\*|\/                  return BINOP;
+override                    return OVERRIDE;
+0|[1-9]{digit}*             return NUM;
+{letter}({letter}|{digit})* return ID;
+\/\/{incomment}*              return COMMENT;
 .		                    return ERROR;
+
 
 %%
 

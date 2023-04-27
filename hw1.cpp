@@ -21,6 +21,12 @@ void printError(string lexema)
     exit(0);
 }
 
+//void printStringError()
+//{
+//    cout <<
+//    exit(0);
+//}
+
 void printString(int line,string id,string str)
 {
     string sp = " ";
@@ -36,6 +42,7 @@ int main()
     string str = "";
     bool seen_zero_char = false;
     string str_with_zero_char = "";
+    bool string_ended = true;
 	while ((token = yylex()))
     {
         switch (token)
@@ -129,6 +136,7 @@ int main()
                 if(seen_zero_char)
                     str = str_with_zero_char;
                 printString(yylineno, id, str);
+                string_ended = true;
                 continue;
             case OVERRIDE:
                 id = "OVERRIDE";
@@ -140,6 +148,7 @@ int main()
                 str = "";
                 str_with_zero_char = "";
                 seen_zero_char = false;
+                string_ended = false;
                 continue;
             case ADDSTRING:
                     str += yytext;
@@ -156,22 +165,43 @@ int main()
                     str_with_zero_char = str;
                     seen_zero_char = true;
                 }
-                else if (strcmp(yytext, "\"") == 0)
+                else if (strcmp(yytext, "\"") == 0) {
                     str += "\"";
+                }
                 else if (strcmp(yytext, "\\") == 0)
                     str += "\\";
                 else if (yytext[0] == 'x')
                 {
                     yytext += 1;
                     long num = strtol(yytext, nullptr, 16);
+                    if (num < 0 || num > 127){
+                        cout << "Error undefined escape sequence x" << yytext << endl;
+                        exit(0);
+                    }
                     str += char(num);
                 }
                 continue;
+            case ESCERROR:
+                cout << yytext << " " << yyleng << endl;
+                if (yytext[0] == 'x' and yyleng >= 3)
+                {
+                    cout << "Error undefined escape sequence x" << yytext[1] << yytext[2] << endl;
+                    exit(0);
+                }
+                cout << "Error undefined escape sequence " << yytext[0] << endl;
+                exit(0);
+            case LINESTRINGERROR:
+                cout << "Error unclosed string" << endl;
             default:
                 printError(yytext);
                 break;
         }
         printLine(yylineno, id, yytext);
+    }
+    if (!string_ended)
+    {
+        cout << "Error unclosed string" << endl;
+        exit(0);
     }
     return 0;
 }
